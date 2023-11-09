@@ -12,6 +12,7 @@ plugins {
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
+    `maven-publish`
 }
 
 repositories {
@@ -37,4 +38,25 @@ dependencies {
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api("org.apache.commons:commons-math3:3.6.1")
+}
+
+tasks {
+  compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+  }
+  compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+  }
+}
+
+publishing {
+  publications {
+    create<MavenPublication>("maven") {
+      groupId = "com.dittofeed"
+      artifactId = "sdk"
+      version = "1.0.0"
+
+      from(components["java"])
+    }
+  }
 }
