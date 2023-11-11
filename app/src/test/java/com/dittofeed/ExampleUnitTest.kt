@@ -1,4 +1,4 @@
-package com.example.dittoFeedSdk
+package com.dittofeed
 
 import org.junit.Test
 

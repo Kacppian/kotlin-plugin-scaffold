@@ -1,10 +1,12 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+
+    `maven-publish`
 }
 
 android {
-    namespace = "com.example.dittoFeedSdk"
+    namespace = "com.dittofeed"
     compileSdk = 33
 
     defaultConfig {

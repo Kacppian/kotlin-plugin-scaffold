@@ -1,8 +1,8 @@
-package com.example.dittoFeedSdk
+package com.dittofeed
 
 import android.content.Context
 
-object DittoFeed {
+object DittoFeedSdk {
 
     private val apikey: String
 
